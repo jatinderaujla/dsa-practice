@@ -1,5 +1,6 @@
-package com.jatinderaujla.arrays;
+package com.jatinderaujla.techniques.arrays.reverseorder;
 
+import com.jatinderaujla.techniques.arrays.reverserorder.ReverseTraversalTechnique;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;

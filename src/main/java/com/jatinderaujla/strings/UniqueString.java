@@ -4,6 +4,9 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Check string contains unique characters
+ */
 public class UniqueString {
     public boolean isUniqueBruteForce(String str){
         for (int i = 0; i < str.length(); i++) {

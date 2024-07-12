@@ -1,4 +1,4 @@
-package com.jatinderaujla.arrays;
+package com.jatinderaujla.techniques.arrays.reverserorder;
 
 import java.util.ArrayList;
 import java.util.Collections;

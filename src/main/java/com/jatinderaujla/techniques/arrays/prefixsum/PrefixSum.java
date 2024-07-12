@@ -1,4 +1,4 @@
-package com.jatinderaujla.techniques.prefixsum;
+package com.jatinderaujla.techniques.arrays.prefixsum;
 
 import com.jatinderaujla.utils.CommonUtils;
 
@@ -80,4 +80,23 @@ public class PrefixSum {
         return rangeSums;
     }
 
+    /**
+     * Find the equilibrium index of a given array
+     * <b>Equilibrium</b> index is if all the lower index sum and higher index sum are equals then index is equilibrium
+     * @param arr given array of size n
+     * @return index minimum index if more than one equilibrium index else return -1 if not found
+     */
+    public int minEquilibriumIndex(int[] arr){
+        int[] prefixSum = CommonUtils.prefixSumArr(arr);
+
+        for (int i = 0; i < arr.length; i++) {
+            int leftSum = (i == 0) ? 0 : prefixSum[i-1];
+            int rightSum = prefixSum[arr.length -1] - prefixSum[i];
+            if(leftSum == rightSum){
+                return i;
+            }
+        }
+
+        return  -1;
+    }
 }
