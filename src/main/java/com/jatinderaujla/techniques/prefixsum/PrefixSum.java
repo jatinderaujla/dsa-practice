@@ -1,4 +1,4 @@
-package com.jatinderaujla.prefixsum;
+package com.jatinderaujla.techniques.prefixsum;
 
 import com.jatinderaujla.utils.CommonUtils;
 
@@ -10,7 +10,8 @@ public class PrefixSum {
     /**
      * Given an array need to find the sum for each queries in given range.
      * But only for <b>odd indices</b>
-     * @param arr given array
+     *
+     * @param arr     given array
      * @param queries range from which need to find sum
      * @return queries sum list
      */
@@ -31,7 +32,8 @@ public class PrefixSum {
     /**
      * Given an array need to find the sum for each queries in given range.
      * But only for <b>even indices</b>
-     * @param arr given array
+     *
+     * @param arr     given array
      * @param queries range from which need to find sum
      * @return queries sum list
      */
@@ -56,15 +58,19 @@ public class PrefixSum {
      * let say range 2d array is [[1,3], [3,4], [0,4]]
      * so if we take first range [1,3] this say find the sum from 1st index to 3rd index in given array
      * 1 to 3rd index sum should be 10
+     *
+     * @param arr     given array
+     * @param queries range queries
+     * @return list of sum for each queries
      */
-    public List<Long> rangeSum(int[] arr, int[][] range) {
+    public List<Long> rangeSum(int[] arr, int[][] queries) {
         //create a prefix sum array of arr
         int[] prefixSum = CommonUtils.prefixSumArr(arr);
 
-        List<Long> rangeSums = new ArrayList<>(range.length);
-        for (int i = 0; i < range.length; i++) {
-            int left = range[i][0];
-            int right = range[i][1];
+        List<Long> rangeSums = new ArrayList<>(queries.length);
+        for (int i = 0; i < queries.length; i++) {
+            int left = queries[i][0];
+            int right = queries[i][1];
             if (left == 0) {
                 rangeSums.add((long) prefixSum[right]);
             } else {

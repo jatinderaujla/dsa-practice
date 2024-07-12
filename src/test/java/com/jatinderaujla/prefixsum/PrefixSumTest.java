@@ -1,5 +1,6 @@
 package com.jatinderaujla.prefixsum;
 
+import com.jatinderaujla.techniques.prefixsum.PrefixSum;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
