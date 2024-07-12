@@ -2,6 +2,8 @@ package com.jatinderaujla.prefixsum;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class PrefixSumTest {
@@ -24,5 +26,19 @@ class PrefixSumTest {
     void evenIndicesSumTest() {
         int[] ans = prefixSum.evenIndicesSum(arr, queries);
         assertArrayEquals(new int[]{27, 24, 17}, ans);
+    }
+
+    @Test
+    void testRangeSum() {
+        int[] arr = {1, 2, 3, 4, 5};
+        int[][] range = {
+                {0, 3},
+                {1, 2}
+        };
+
+        List<Long> rangeSums = prefixSum.rangeSum(arr, range);
+        Long[] expectedRangeSums = {10L, 5L};
+        Long[] actualRangeSums = rangeSums.toArray(new Long[0]);
+        assertArrayEquals(expectedRangeSums, actualRangeSums);
     }
 }
