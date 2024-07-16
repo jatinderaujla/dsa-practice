@@ -1,10 +1,42 @@
-package com.jatinderaujla.techniques.arrays.reverserorder;
+package com.jatinderaujla.techniques.arrays.carryforward;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ReverseTraversalTechnique {
+public class CarryForward {
+
+    /**
+     * Given a lowercase string count the no of a,g pairs exists in the given string
+     * such that arr[i] < arr[j]
+     * @param str given string
+     * @return no of A,G pair count
+     */
+    public int countAGPairsReverseOrder(String str){
+        int pairs = 0;
+        int gCount = 0;
+        for (int i = str.length()-1; i >= 0; i--) {
+            if(str.charAt(i) == 'g'){
+                gCount++;
+            } else if(str.charAt(i) == 'a'){
+                pairs = pairs + gCount;
+            }
+        }
+        return pairs;
+    }
+
+    public int countAGPairs(String str){
+        int pairs = 0;
+        int aCount = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if(str.charAt(i) == 'a'){
+                aCount++;
+            } else if(str.charAt(i) == 'g'){
+                pairs = pairs + aCount;
+            }
+        }
+        return pairs;
+    }
 
     public Integer[] leaderElementsBruteForce(int[] arr) {
         List<Integer> leaders = new ArrayList<>();
