@@ -90,16 +90,35 @@ class CarryForwardTest {
         assertEquals(6, count);
 
         str = "NBDH";
-        int count1 = carryForward.countOfSubsequence(str);
-        assertEquals(0, count1);
+        count = carryForward.countOfSubsequence(str);
+        assertEquals(0, count);
 
         str = "AAAA";
-        int count2 = carryForward.countOfSubsequence(str);
-        assertEquals(10, count2);
+        count = carryForward.countOfSubsequence(str);
+        assertEquals(10, count);
 
         str = "AJHU";
-        int count3 = carryForward.countOfSubsequence(str);
-        assertEquals(5, count3);
+        count = carryForward.countOfSubsequence(str);
+        assertEquals(5, count);
 
+    }
+
+    @Test
+    void minToggleCount() {
+        int[] arr = {1 ,0, 1, 0};
+        int count = carryForward.minToggleCount(arr);
+        assertEquals(3, count);
+
+        arr = new int[]{0, 0, 0, 0};
+        count = carryForward.minToggleCount(arr);
+        assertEquals(1, count);
+
+        arr = new int[]{1, 1, 1, 1};
+        count = carryForward.minToggleCount(arr);
+        assertEquals(0, count);
+
+        arr = new int[]{0, 1, 1, 1};
+        count = carryForward.minToggleCount(arr);
+        assertEquals(2, count);
     }
 }

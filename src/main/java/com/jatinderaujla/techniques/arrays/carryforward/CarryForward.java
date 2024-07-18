@@ -191,4 +191,22 @@ public class CarryForward {
         }
         return maxProfit;
     }
+
+    /**
+     * Find minimum number switch toggle required to turn on all bulb an in array
+     * When we toggle the switch all the bulb on the right hand side of that bulb will toggle
+     * @param arr given array of 0 and 1. Zero represents bulb is off 1 represents bulb is on
+     * @return minimum toggle count
+     */
+    public int minToggleCount(int[] arr){
+        int count = 0;
+        int state = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if(state == arr[i]){
+                count++;
+                state = 1 - state;
+            }
+        }
+        return count;
+    }
 }
