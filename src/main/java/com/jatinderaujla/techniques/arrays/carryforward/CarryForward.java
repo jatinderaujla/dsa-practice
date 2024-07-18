@@ -157,6 +157,24 @@ public class CarryForward {
     }
 
     /**
+     * Find all the amazing substring of str
+     * A amazing substring is one that starts with the vowel (a,e,i,o,u) (A,E,I,O,U)
+     * @param str given string
+     * @return return count of subsequence possible which start with vowel character
+     */
+    public int countOfSubsequence(String str){
+        int n = str.length();
+        int totalCount = 0;
+        for (int i = 0; i < n; i++) {
+            char ch = str.charAt(i);
+            if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' || ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U'){
+                totalCount = totalCount + (n - i);
+            }
+        }
+        return totalCount;
+    }
+
+    /**
      * Find the best time to buy or sell stock to get max profit
      * @param arr given array with stock price on each day
      * @return max profit after at least 1 time buy and 1 time sell

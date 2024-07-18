@@ -82,4 +82,24 @@ class CarryForwardTest {
         int maxProfit3 = carryForward.maxProfit(arr);
         assertEquals(3, maxProfit3);
     }
+
+    @Test
+    void countOfSubsequence() {
+        String str = "ABEC";
+        int count = carryForward.countOfSubsequence(str);
+        assertEquals(6, count);
+
+        str = "NBDH";
+        int count1 = carryForward.countOfSubsequence(str);
+        assertEquals(0, count1);
+
+        str = "AAAA";
+        int count2 = carryForward.countOfSubsequence(str);
+        assertEquals(10, count2);
+
+        str = "AJHU";
+        int count3 = carryForward.countOfSubsequence(str);
+        assertEquals(5, count3);
+
+    }
 }
