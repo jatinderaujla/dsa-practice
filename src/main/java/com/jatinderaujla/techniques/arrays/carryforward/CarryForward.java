@@ -155,4 +155,22 @@ public class CarryForward {
         }
         return minLen;
     }
+
+    /**
+     * Find the best time to buy or sell stock to get max profit
+     * @param arr given array with stock price on each day
+     * @return max profit after at least 1 time buy and 1 time sell
+     */
+    public int maxProfit(int[] arr){
+        if(arr.length == 0 || arr.length == 1) return 0;
+        int maxProfit = 0;
+        int minPrice = Integer.MAX_VALUE;
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i] < minPrice){
+                minPrice = arr[i];
+            }
+            maxProfit = Math.max(maxProfit, arr[i] - minPrice);
+        }
+        return maxProfit;
+    }
 }
