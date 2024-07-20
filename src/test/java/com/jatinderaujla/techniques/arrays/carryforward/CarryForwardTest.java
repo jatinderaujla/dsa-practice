@@ -105,7 +105,7 @@ class CarryForwardTest {
 
     @Test
     void minToggleCount() {
-        int[] arr = {1 ,0, 1, 0};
+        int[] arr = {1, 0, 1, 0};
         int count = carryForward.minToggleCount(arr);
         assertEquals(3, count);
 
@@ -120,5 +120,32 @@ class CarryForwardTest {
         arr = new int[]{0, 1, 1, 1};
         count = carryForward.minToggleCount(arr);
         assertEquals(2, count);
+    }
+
+    @Test
+    void divideArrayEvenly() {
+        int[] arr = {2, 4, 8, 6};
+        String result = carryForward.divideArrayEvenly(arr);
+        assertEquals("YES", result);
+
+        arr = new int[]{2, 4, 8, 6, 7};
+        result = carryForward.divideArrayEvenly(arr);
+        assertEquals("NO", result);
+
+        arr = new int[]{2, 4, 8, 6, 7, 8};
+        result = carryForward.divideArrayEvenly(arr);
+        assertEquals("YES", result);
+
+    }
+
+    @Test
+    void pickFromBothSide() {
+        int[] arr = {5, -2, 3, 1, 2};
+        int maxSum = carryForward.pickFromBothSide(arr, 3);
+        assertEquals(8, maxSum);
+
+        arr = new int[]{2, 3, -1, 4, 2, 1};
+        maxSum = carryForward.pickFromBothSide(arr, 4);
+        assertEquals(9, maxSum);
     }
 }
