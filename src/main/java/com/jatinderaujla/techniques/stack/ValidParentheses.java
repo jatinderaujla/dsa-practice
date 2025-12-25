@@ -1,4 +1,4 @@
-package com.jatinderaujla;
+package com.jatinderaujla.techniques.stack;
 
 import java.util.Stack;
 
