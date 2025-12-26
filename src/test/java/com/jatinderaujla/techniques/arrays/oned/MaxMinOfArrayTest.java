@@ -99,5 +99,28 @@ class MaxMinOfArrayTest {
 
     @Test
     void findSecondMinElementOfArray() {
+        int[] arr = new int[]{8,8,8,8};
+        int maxElementOfArrayUsingSort = maxMinOfArray.findSecondMinElementOfArray(arr);
+        assertEquals(Integer.MAX_VALUE, maxElementOfArrayUsingSort);
+
+        arr = new int[]{7,8,6};
+        maxElementOfArrayUsingSort = maxMinOfArray.findSecondMinElementOfArray(arr);
+        assertEquals(7, maxElementOfArrayUsingSort);
+
+        arr = new int[]{6,8,7};
+        maxElementOfArrayUsingSort = maxMinOfArray.findSecondMinElementOfArray(arr);
+        assertEquals(7, maxElementOfArrayUsingSort);
+
+        arr = new int[]{0, -1, 6, 8, 7, 9};
+        maxElementOfArrayUsingSort = maxMinOfArray.findSecondMinElementOfArray(arr);
+        assertEquals(0, maxElementOfArrayUsingSort);
+    }
+
+    @Test
+    void makeArrayElEqual() {
+        int[] arr = new int[]{0, -1, 6, 8, 7, 9};
+
+        int minTimeInSec = maxMinOfArray.makeArrayElEqual(arr);
+        assertEquals(25, minTimeInSec);
     }
 }

@@ -56,4 +56,25 @@ public class MaxMinOfArray {
         }
         return secondMin;
     }
+
+    /**
+     * Given an integer array arr of size N. In one second, you can increase the value of one element by 1.
+     * Find the minimum time in seconds to make all elements of the array equal.
+     * @param arr given input array
+     * @return minimum time in seconds to make all elements of array equals
+     */
+    public int makeArrayElEqual(int[] arr){
+        int maxEl = Integer.MIN_VALUE;
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i] > maxEl){
+                maxEl = arr[i];
+            }
+        }
+
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum = sum + (maxEl - arr[i]);
+        }
+        return sum;
+    }
 }

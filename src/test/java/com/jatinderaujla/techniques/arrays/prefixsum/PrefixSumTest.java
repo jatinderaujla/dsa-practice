@@ -61,4 +61,15 @@ class PrefixSumTest {
         int equilibriumIndex1 = prefixSum.minEquilibriumIndex(arr);
         assertEquals(-1, equilibriumIndex1);
     }
+
+    @Test
+    void rangeSumBruteForce() {
+        int[] arr = {1, 2, 3, 4, 5};
+        int[][] range = {
+                {0, 3},
+                {1, 2}
+        };
+        int[] sum = prefixSum.rangeSumBruteForce(arr, range);
+        assertArrayEquals(new int[]{10, 5}, sum);
+    }
 }

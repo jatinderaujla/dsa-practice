@@ -81,6 +81,32 @@ public class PrefixSum {
     }
 
     /**
+     * Given an array range and find the sum between given range of the array
+     * let say array given array is [1,2,3,4,5]
+     * let say range 2d array is [[1,3], [3,4], [0,4]]
+     * so if we take first range [1,3] this say find the sum from 1st index to 3rd index in given array
+     * 1 to 3rd index sum should be 10
+     *
+     * @param arr     given array
+     * @param queries range queries
+     * @return list of sum for each queries
+     */
+    public int[] rangeSumBruteForce(int[] arr, int[][] queries) {
+
+        int[] rangeSums = new int[queries.length];
+        for (int i = 0; i < queries.length; i++) {
+            int left = queries[i][0];
+            int right = queries[i][1];
+            int sum = 0;
+            for(int j = left; j <= right; j++){
+                sum += arr[j];
+            }
+            rangeSums[i] = sum;
+        }
+        return rangeSums;
+    }
+
+    /**
      * Find the equilibrium index of a given array
      * <b>Equilibrium</b> index is if all the lower index sum and higher index sum are equals then index is equilibrium
      * @param arr given array of size n
